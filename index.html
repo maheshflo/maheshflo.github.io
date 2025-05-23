@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+  <title>Dashboard</title>
   <style>
     html {
       scroll-behavior: smooth;
@@ -282,7 +282,7 @@
   <!-- Navigation Bar -->
   <div class="navbar">
   <div class="custom-marquee">
-    <div class="marquee-content">Welcome to my Profile</div>
+    <div class="marquee-content">Welcome to my Portfolio</div>
   </div>
   <a href="#about-section" class="nav-link">About</a>
   <a href="projects.html" class="nav-link">Projects</a>
@@ -357,33 +357,36 @@
 
   <!-- JS for profile zoom -->
   <script>
-    const profileImage = document.getElementById('profileImage');
-    const overlay = document.getElementById('overlay');
-    let zoomed = false;
-    let zoomedImage;
+  const profileImage = document.getElementById('profileImage');
+  const overlay = document.getElementById('overlay');
+  let zoomed = false;
+  let zoomedImage;
 
-    profileImage.addEventListener('click', () => {
-      if (!zoomed) {
-        zoomedImage = document.createElement('div');
-        zoomedImage.classList.add('zoomed-profile');
-        document.body.appendChild(zoomedImage);
-        overlay.style.display = 'block';
-        zoomed = true;
-      }
-    });
+  profileImage.addEventListener('click', () => {
+    if (!zoomed) {
+      zoomedImage = document.createElement('div');
+      zoomedImage.classList.add('zoomed-profile');
+      document.body.appendChild(zoomedImage);
+      overlay.style.display = 'block';
+      zoomed = true;
+    }
+  });
 
-    document.addEventListener('click', (e) => {
-      if (zoomed && e.target !== profileImage && e.target !== zoomedImage) {
-        zoomedImage.remove();
-        overlay.style.display = 'none';
-        zoomed = false;
-      }
-    });
-function handleRightClick(event) {
+  document.addEventListener('click', (e) => {
+    if (zoomed && e.target !== profileImage && e.target !== zoomedImage) {
+      zoomedImage.remove();
+      overlay.style.display = 'none';
+      zoomed = false;
+    }
+  });
+
+  // Disable right-click
+  document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
     alert("This function will not work");
     return false;
-  }
-  </script>
+  });
+</script>
+
 </body>
 </html>

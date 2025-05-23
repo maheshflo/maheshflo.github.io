@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Download</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, pink, white);
+      text-align: center;
+      padding: 40px;
+      animation: fadeInBody 1.5s ease-in;
+      display: none; /* Hide content until access granted */
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+	h2 {
+		text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      font-size: 2rem;
+      margin-bottom: 30px;
+	  color: brown;	  
+	}
+	a {
+		text-decoration: none;
+		text-align: left;
+	}
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+      width: 300px;
+      animation: fadeInBox 1s ease forwards;
+    }
+
+    @keyframes fadeInBox {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .project-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .project-name {
+      font-size: 20px;
+      margin: 10px 0 15px;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: red;
+      color: black;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: red;
+    }
+
+    .thank-you {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body oncontextmenu="handleRightClick(event)">
+
+<h1>Download Projects</h1>
+<a href="https://maheshflo.github.io"><h2>Back to Profile</h2></a>
+
+<div class="projects">
+  <div class="container">
+    <img src="project1.jpg" alt="Project 1" class="project-img">
+    <div class="project-name">Data Structure (Console C)</div>
+    <button class="btn" onclick="downloadProject('BinarySearchtree.zip', 'thankYou1')">Download</button>
+    <div class="thank-you" id="thankYou1">✅ Your download is starting...</div>
+  </div>
+
+  <div class="container">
+    <img src="project2.jpg" alt="Project 2" class="project-img">
+    <div class="project-name">Calculator (C# Windows Form)</div>
+    <button class="btn" onclick="downloadProject('calculator.zip', 'thankYou2')">Download</button>
+    <div class="thank-you" id="thankYou2">✅ Your download is starting...</div>
+  </div>
+
+  <div class="container">
+    <img src="project3.jpg" alt="Project 3" class="project-img">
+    <div class="project-name">Tic Tac Toe (C# Windows Form)</div>
+    <button class="btn" onclick="downloadProject('TICTACTOE.zip', 'thankYou3')">Download</button>
+    <div class="thank-you" id="thankYou3">✅ Your download is starting...</div>
+  </div>
+
+  <div class="container">
+    <img src="project4.jpg" alt="Project 4" class="project-img">
+    <div class="project-name">ATM (Console JAVA)</div>
+    <button class="btn" onclick="downloadProject('atm.zip', 'thankYou4')">Download</button>
+    <div class="thank-you" id="thankYou4">✅ Your download is starting...</div>
+  </div>
+</div>
+
+<script>
+  function downloadProject(fileName, thankYouId) {
+    const thankYou = document.getElementById(thankYouId);
+    thankYou.style.display = 'block';
+
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = fileName;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, 1000);
+  }
+
+  // Access key prompt
+  window.onload = function () {
+    const access = prompt("Enter Access Key:");
+    if (access === "Mahesh@2004") {
+      document.body.style.display = 'block';
+    } else {
+      document.body.innerHTML = ""; // Hide everything
+      document.body.style.background = "black";
+    }
+  }
+
+  // Disable right-click
+  function handleRightClick(event) {
+    event.preventDefault();
+    alert("This function will not work");
+    return false;
+  }
+</script>
+
+</body>
+</html>
