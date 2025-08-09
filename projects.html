@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project Download</title>
+  <title>Project</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -94,35 +94,21 @@
 </head>
 <body oncontextmenu="handleRightClick(event)">
 
-<h1>Download Projects</h1>
+<h1>Projects</h1>
 <a href="https://maheshflo.github.io"><h2>Back to Profile</h2></a>
 
-<div class="projects">
-  <div class="container">
-    <img src="project1.jpg" alt="Project 1" class="project-img">
-    <div class="project-name">Data Structure (Console C)</div>
-    <button class="btn" onclick="downloadProject('BinarySearchtree.zip', 'thankYou1')">Download</button>
-    <div class="thank-you" id="thankYou1">✅ Your download is starting...</div>
-  </div>
-
-  <div class="container">
-    <img src="project2.jpg" alt="Project 2" class="project-img">
-    <div class="project-name">Calculator (C# Windows Form)</div>
-    <button class="btn" onclick="downloadProject('calculator.zip', 'thankYou2')">Download</button>
-    <div class="thank-you" id="thankYou2">✅ Your download is starting...</div>
-  </div>
-
-  <div class="container">
+<div class="projects"> 
+   <div class="container">
     <img src="project3.jpg" alt="Project 3" class="project-img">
     <div class="project-name">Tic Tac Toe (C# Windows Form)</div>
-    <button class="btn" onclick="downloadProject('TICTACTOE.zip', 'thankYou3')">Download</button>
-    <div class="thank-you" id="thankYou3">✅ Your download is starting...</div>
+    <button class="btn href="maheshflo.github.io\tictactoe.github.io">Visit</button>
+    <div class="thank-you" id="thankYou3">✅ You can play..</div>
   </div>
 
   <div class="container">
     <img src="project4.jpg" alt="Project 4" class="project-img">
-    <div class="project-name">ATM (Console JAVA)</div>
-    <button class="btn" onclick="downloadProject('atm.zip', 'thankYou4')">Download</button>
+    <div class="project-name">Ecommerce</div>
+    <button class="btn" href="mhencetecho.infinityfreeapp.com">Visit</button>
     <div class="thank-you" id="thankYou4">✅ Your download is starting...</div>
   </div>
 </div>
@@ -141,17 +127,7 @@
       document.body.removeChild(link);
     }, 1000);
   }
-
-  // Access key prompt
-  window.onload = function () {
-    const access = prompt("Enter Access Key:");
-    if (access === "Mahesh@2004") {
-      document.body.style.display = 'block';
-    } else {
-      document.body.innerHTML = ""; // Hide everything
-      document.body.style.background = "black";
-    }
-  }
+  
 
   // Disable right-click
   function handleRightClick(event) {
@@ -163,3 +139,4 @@
 
 </body>
 </html>
+
